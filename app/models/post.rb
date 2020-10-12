@@ -10,5 +10,8 @@ class Post < ActiveRecord::Base
       if attribute["name"].present?
         category = Category.find_or_create_by(attribute)
         self.categories << category
+      end
+    end
+  end
 
 end
