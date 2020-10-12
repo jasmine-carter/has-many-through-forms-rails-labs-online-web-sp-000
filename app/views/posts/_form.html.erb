@@ -12,7 +12,7 @@
     <%= categories_fields.text_field :name %>
   <% end %>
   <%=f.fields_for :comments, post.comments.build do |comment_content| %>
-  <%=comment_content.text_field :comment_content %>
+  <%=comment_content.text_field :content %>
   <%end%>
   <%= f.submit %>
 <% end %>
