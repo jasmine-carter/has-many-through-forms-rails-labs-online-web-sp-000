@@ -2,7 +2,7 @@
 
 <p> <%=@post.content %> </p>
 
-
+<%binding.pry%>
 <% @post.comments.each do |c| %>
   <li> <%= comment.user.username %> : <%=comment.content %></li>
   <% end %>
