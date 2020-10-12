@@ -3,7 +3,7 @@
 <p> <%=@post.content %> </p>
 
 <% @post.comments.each do |c| %>
-  <li> <%= comment.user.username %> : <%=comment.content %></li>
+  <li> <%= c.user.username %> : <%=c.content %></li>
   <% end %>
 
 
