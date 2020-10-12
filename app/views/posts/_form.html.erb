@@ -1,21 +1,19 @@
+<h1> Create New Post </h1>
 
-<div class=post-content>
-  <%= @post.content %>
-</div>
-<%= form_for post do |f| %>
+<%= form_for @post do |f| %>
+
   <%= f.label "Title" %>
   <%= f.text_field :title %>
+  <br>
   <%= f.label "Content" %>
-  <%= f.text_area :content %><br>
-  <%=f.label "Categories" %>
+  <%= f.text_area :content %>
+  <br>
   <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  <br>
   <%= f.fields_for :categories, post.categories.build do |categories_fields| %>
+    <%= categories_fields.label :name, "Category" %>
     <%= categories_fields.text_field :name %>
   <% end %>
   <br>
-  <%=f.label "Comments" %>
-  <%=f.fields_for :comments, post.comments.build do |comment_content| %>
-  <%=comment_content.text_field :content %>
-  <%end%>
   <%= f.submit %>
 <% end %>
